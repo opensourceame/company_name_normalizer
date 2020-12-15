@@ -72,7 +72,7 @@ class CompanyNameNormalizer
 
   def normalize(name)
 
-    name = name.upcase
+    name = name.to_s.upcase
     name = clean_whitespace(name)
     name = get_primary_name(name)
     name = transliterate(name)
