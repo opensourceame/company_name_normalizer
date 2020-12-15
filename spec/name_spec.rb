@@ -1,8 +1,4 @@
-require 'pry'
-require_relative '../c'
-
 describe 'something' do
-
 
   NORMALIZATIONS = {
     'Hymcor - Hierros y Metales Córdoba S. A.'       => 'HymcorHierrosYMetalesCordoba',

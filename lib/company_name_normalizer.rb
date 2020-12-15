@@ -1,8 +1,12 @@
 require 'i18n'
+require 'yaml'
+
+I18n.config.available_locales = :en
+I18n.default_locale           = :en
 
 class CompanyNameNormalizer
 
-  COUNTRIES          = YAML.load_file(__dir__ + '/lib/countries.yaml').freeze
+  COUNTRIES          = YAML.load_file(__dir__ + '/countries.yaml').freeze
   COUNTRY_SUBS       = COUNTRIES.values.map { |c| '(' + c + ')' }
   REGION_SUBS        = %w[ASIA EUROPE UK].map { |c| '(' + c + ')' }
   NON_UNICODE_REGEXP = /\P{Word}+/.freeze
@@ -95,7 +99,7 @@ class CompanyNameNormalizer
 
     return nil if n == ''
 
-
+    n
   end
 
   def transliterate(name)
